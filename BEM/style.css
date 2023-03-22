@@ -1,0 +1,133 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    background-color: #f4f4f5;
+    height: 100vh;
+}
+
+#notification{
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    border-color: #47d864;
+    z-index: 999999;
+}
+
+.notification{
+    display: flex;
+    background-color: #fff;
+    min-width: 400px;
+    max-width: 450px;
+    border-left: 4px solid;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.08);
+    align-items: center;
+    border-radius: 2px;
+    padding: 20px 0;
+    margin-top: 24px;
+    transition: all linear .3s;
+}
+
+.notification_check{    
+    padding: 0 16px;
+    font-size: 16px;
+}
+
+.notification_body{
+    flex-grow: 1;
+}
+
+.notification_close{
+    padding: 0 16px;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.notification_title{
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.notification_content{
+    font-size: 14px;
+    color: #888;
+    margin-top: 6px;
+    line-height: 1.5;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(calc(100% + 30px));
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+.notification--success{
+    border-color: #47d864;
+}
+
+.notification--success .notification_check{
+    color: #47d864;
+}
+
+.notification--error{
+    border-color: #c2382e;
+}
+
+.notification--error .notification_check{
+    color: #c2382e;
+}
+
+.notification--info{
+    border-color: #dc982b;
+}
+
+.notification--info .notification_check{
+    color: #dc982b;
+}
+
+.btn_notification{
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+.btn{
+    min-width: 200px;
+    max-width: 270px;
+    text-align: center;
+    border-radius: 10px;
+    margin-right: 20px;
+    padding: 20px 0px;
+    border-radius: 50px;
+    padding: 12px 48px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.btn:hover{
+    background-color: #ccc;
+}
+
+.btn--success{
+    background-color: #47d864;
+}
+
+.btn--error{
+    background-color: red;
+}

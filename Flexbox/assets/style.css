@@ -1,0 +1,242 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;   
+    background-color: #ccc;
+}
+
+.flexbox-header-div-1 {
+    background-color: #EF5122;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.flexbox-header-div-1 ul{
+    margin: auto 16px;
+    padding: 0px;
+}
+
+.flexbox-header-div-1 li{
+    display: inline-block;
+    color: #fff;
+    list-style: none;
+    margin: 0 8px;
+}
+
+.form-input{
+    max-width: 720px;
+    background-color: #fff;
+    margin-left: 345px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 32px;
+}
+
+.form-input-2{
+    padding: 8px 0px;
+    display: flex;
+}
+
+.form-input-2 label{
+    min-width: 90px;
+}
+
+.form-input-2 input{
+    flex: 1;
+}
+
+.parameter_column{
+    display: flex;
+    padding: 12px 0px;
+    background-color: #fff;
+}
+
+.parameter_column_2{
+    padding: 0px 16px;
+}
+
+.feature_column{
+    display: flex;
+    padding: 20px 0px;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.feature_column_2{
+    padding: 0 12px;
+    flex-basis: 30%;
+}
+
+.feature_column_2:first-child{
+    background-color: aqua;
+}
+
+.feature_column_2:nth-child(2){
+    background-color: red;
+}
+
+.feature_column_2:nth-child(3){
+    background-color:burlywood;
+}
+
+.number_column{
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0 32px 0;
+    background-color: #fff;
+    margin-top: 36px;
+}
+
+.number_column_2{
+    width: 148px;
+    height: 90px;
+    color: #fff;
+    text-align: center;
+    line-height: 90px;
+    font-size: 48px;
+    font-weight: 700;
+    margin-top: 20px;
+    background-color: #EF5122;
+}   
+
+.center_item{
+    justify-content: center;
+    display: flex;
+    background-color: aquamarine;
+    height: 250px;
+    width: 600px;
+    margin: 30px auto;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.center_item h3{
+    left: 0;
+    top: 0;
+    margin: auto;
+}
+
+.chart_column{
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    height: 320px;
+    margin: 36px auto 0px auto;
+    padding: 32px;
+}
+
+.chart_column_2{
+    background-color: #EF5122;
+    color: #fff;
+    height: var(--percent);
+    align-self: flex-end;
+    width: 60px;
+    text-align: center;
+    animation: growth ease-in 0.5s;
+}
+
+@keyframes growth {
+    from {
+        height: calc(var(--percent)-50%);
+        opacity: 0;
+    }
+    to {
+        height: var(--percent);
+        opacity: 1;
+    }
+}
+
+.flexbox_end_parameter{
+    display: flex;
+    margin: 12px auto 30px auto;
+    flex-direction: row;
+    max-width: 720px;
+    min-height: 360px;
+    padding: 32px 0px;
+}
+
+.flexbox_end_parameter_1:first-child{
+    padding: 4px 16px;
+    background-color: #fff;
+    flex: 1;
+}
+
+.flexbox_end_parameter_1:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.flexbox_end_parameter_2:first-child {
+    flex: 1;
+    padding: 4px 16px;
+    background-color: rgb(227, 192, 214);
+}
+
+.flexbox_end_parameter_2:nth-child(2) {
+    flex: 1;
+    padding: 4px 16px;
+    background-color: rgb(227, 192, 214);
+}
+  /* ======= Buttons ======== */
+  
+  /* Block */
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 12px 48px;
+    border-radius: 50px;
+    cursor: pointer;
+    min-width: 120px;
+    transition: opacity 0.2s ease;
+    user-select: none;
+  }
+
+  .btn__demo{
+    text-align: center;
+    margin: 20px;
+  }
+  
+  /* Modifier */
+  .btn--size-l {
+    padding: 16px 56px;
+  }
+  
+  .btn--size-s {
+    padding: 8px 32px;
+  }
+  
+  .btn:hover {
+    opacity: 0.8;
+  }
+  
+  .btn + .btn {
+    margin-left: 16px;
+  }
+  
+  .btn--success {
+    background-color: #71be34;
+  }
+  
+  .btn--warn {
+    background-color: #ffb702;
+  }
+  
+  .btn--danger {
+    background-color: #ff623d;
+  }
+  
+  .btn--disabled, .btn[disabled] {
+    opacity: 0.5 !important;
+    pointer-events: none;
+  }

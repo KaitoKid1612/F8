@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello BEM</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+</head>
+<body>
+    <div class="" id="notification"></div>
+
+    <div class="btn_notification">
+        <div onclick="showSuccessNotification();" class="btn btn--success">Show success notification</div>
+        <div onclick="showErrorNotification();" class="btn btn--error">Show error notification</div>
+    </div>
+
+    <script>
+        //Show notification
+        function notification({
+            title = '', 
+            message = '',
+            type = '',
+            duration = 1000   
+        }){
+            const main = document.getElementById('notification');
+
+            if (main) {
+                const notification = document.createElement('div');
+
+                //Auto remove Notification
+                const autoRemoveId = setTimeout(function(){
+                    main.removeChild(notification);
+                }, duration + 1000)
+
+                //Remove Notification onclick            
+                notification.onclick = function(e){
+                    if(e.target.closest('.notification_close')){
+                        main.removeChild(notification);
+                        clearTimeout(autoRemoveId);
+                    }
+                }
+
+                notification.classList.add('notification', `notification--${type}`);
+                const delay = (duration/1000).toFixed(2);
+                notification.style.animation = `slideInLeft ease .3s,fadeOut linear 1s ${delay}s forwards `;
+
+                const icons = {
+                    success:'fas fa-check-circle',
+                    error:'fa-solid fa-circle-exclamation',
+                    info:'fa-solid fa-circle-info',
+                };
+                const icon = icons[type];
+                notification.innerHTML = `
+                    <div class="notification_check">
+                        <i class="${icon}"></i>
+                    </div>
+                    <div class="notification_body">
+                        <h3 class="notification_title">${title}</h3>
+                        <p class="notification_content">${message}</p>
+                    </div>
+                    <div class="notification_close">
+                        <i class="fas fa-times"></i>
+                    </div>
+                `;
+                main.appendChild(notification);
+            }
+        }
+        
+
+        function showSuccessNotification(){
+                notification({
+                title: 'Thành công',
+                message: 'Bạn đã đăng kí thành công',
+                type: 'success',
+                duration: 5000
+            });
+        }
+
+        function showErrorNotification(){
+                notification({
+                title: 'Thất bại!',
+                message: 'Có lỗi xảy ra, vui lòng liên hệ quản trị viên',
+                type: 'error',
+                duration: 5000
+            });
+        }
+    </script>
+</body>
+</html>
