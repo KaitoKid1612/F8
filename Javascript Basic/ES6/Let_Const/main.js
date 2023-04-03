@@ -92,7 +92,7 @@
 // console.log(html)
 
 // 11. Modules: Import/Export
-// Nếu sử dụng Destructuring thì ko cần giá trih Export Default
+// Nếu sử dụng Destructuring thì ko cần giá trị Export Default
 // import logger from './logger.js'
 
 // console.log(logger)
